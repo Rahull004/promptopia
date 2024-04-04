@@ -9,7 +9,7 @@ function Nav() {
   const {data: session} = useSession();
 
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown,setToggleDropdown] = useState(true);
+  const [toggleDropdown,setToggleDropdown] = useState(false);
 
   useEffect(() => {
       const setUpProviders = async () => {
@@ -76,7 +76,7 @@ function Nav() {
         {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
               className="rounded-full"
